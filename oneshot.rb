@@ -5,21 +5,21 @@
 class Oneshot < Formula
   desc "A first first-come-first-serve, single-fire, feature-rich HTTP server. Easily transfer files to and from your terminal and any browser or HTTP client."
   homepage "https://www.oneshot.uno"
-  version "2.1.0"
+  version "2.1.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.0/oneshot_Darwin_x86_64.tar.gz"
-      sha256 "c691a788cf9792830906173fba0c4f95a8227ec0467000abc2d5238d136a6aa5"
+      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.1/oneshot_Darwin_x86_64.tar.gz"
+      sha256 "4beb9cb6404e6a3cac0a6009fabc024c587d819fae50a305af3745772c039699"
 
       def install
         bin.install "oneshot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.0/oneshot_Darwin_arm64.tar.gz"
-      sha256 "e9e35b03b68ce05bf9c866dd46c6acbf96b98a405bafbc212ba05b2abf705f52"
+      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.1/oneshot_Darwin_arm64.tar.gz"
+      sha256 "a4e04241cf69c7ea69e057a37a7054bdad8dcdf7261297b89e030e05b92356c5"
 
       def install
         bin.install "oneshot"
@@ -28,25 +28,25 @@ class Oneshot < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.0/oneshot_Linux_armv6.tar.gz"
-      sha256 "932c37eba7b7cb115049b2bf6f64fbaebf1ed63d26d9831f4e636f2aeba7cf04"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.1/oneshot_Linux_arm64.tar.gz"
+      sha256 "f750bc0951ad361a282e5fd765eeab6615b7c40fed4a90ed4feb65cb5ddd53bd"
 
       def install
         bin.install "oneshot"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.0/oneshot_Linux_x86_64.tar.gz"
-      sha256 "2f07b2ef4c189a0e44bbb5a125457ce0abf47c76237247428da1f2704ff178cd"
+      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.1/oneshot_Linux_x86_64.tar.gz"
+      sha256 "9b99cbb60557b639602ecf561af09076127f443326d82a88179846ef5db18091"
 
       def install
         bin.install "oneshot"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.0/oneshot_Linux_arm64.tar.gz"
-      sha256 "10882a66f9a45e5be2141ead9af41241d2fd42a717c29d9fab4d98f6270d89fb"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/forestnode-io/oneshot/releases/download/v2.1.1/oneshot_Linux_armv6.tar.gz"
+      sha256 "b9b548c160443ae714c198e008e9d0b9eff0657e3457ede23a191b468188cf5d"
 
       def install
         bin.install "oneshot"
